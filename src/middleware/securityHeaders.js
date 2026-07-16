@@ -24,5 +24,5 @@ export async function securityHeaders(c, next) {
   c.header("X-Frame-Options", "DENY");
   c.header("Referrer-Policy", "strict-origin-when-cross-origin");
   c.header("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
-  c.header("Permissions-Policy", "geolocation=(), microphone=(), camera=()");
+  c.header("Permissions-Policy", "geolocation=(), microphone=(self), camera=()");
 }
