@@ -13,6 +13,59 @@ A full-stack **AI language studio** running entirely on **Cloudflare Workers**. 
 
 The frontend UI and the backend API both run inside a **single Cloudflare Worker** — one deploy, one origin, no servers to manage. The OpenAI key stays server-side and is never exposed to the browser.
 
+🔗 **Live demo:** https://translator-app.aysasiddikameem3141.workers.dev
+
+![AI Translator](./public/og-image.svg)
+
+## 📸 Screenshots
+
+> Add your captures to `docs/screenshots/` (paths below) — they render here automatically.
+
+| Home                               | Translation + AI tools               | Lingo assistant                      |
+| ---------------------------------- | ------------------------------------ | ------------------------------------ |
+| ![Home](docs/screenshots/home.png) | ![Tools](docs/screenshots/tools.png) | ![Lingo](docs/screenshots/lingo.png) |
+
+## 🎬 Demo
+
+![Demo](docs/screenshots/demo.gif)
+
+## 🏗️ Architecture
+
+```mermaid
+flowchart LR
+  U["Browser / installed PWA"] -->|HTTPS| CF["Cloudflare Worker (edge)"]
+
+  subgraph W["Single Cloudflare Worker"]
+    direction TB
+    A["Static assets<br/>HTML · CSS · ES modules"]
+    MW["Middleware<br/>request-id · rate-limit<br/>security headers · CORS"]
+    API["Hono API — /api/v1"]
+    MW --> API
+  end
+
+  CF --> A
+  CF --> MW
+  API -->|"server-side (key hidden)"| OAI["OpenAI API"]
+  A -->|"round flags"| CDN["jsDelivr · circle-flags"]
+```
+
+### Sequence — a translation request
+
+```mermaid
+sequenceDiagram
+  actor User
+  participant UI as Frontend (app.js)
+  participant W as Worker (Hono + Zod)
+  participant O as OpenAI
+  User->>UI: Enter text, pick language / mode / context
+  UI->>W: POST /api/v1/translate
+  W->>W: request-id · rate-limit · validate (Zod)
+  W->>O: Chat completion (server-side key)
+  O-->>W: Translated text
+  W-->>UI: { translation, model }
+  UI-->>User: Rendered result + AI tools / chat / TTS
+```
+
 ## ✨ Features
 
 **Translation**
@@ -140,6 +193,9 @@ npx wrangler deploy
 
 ## 🔌 API
 
+Endpoints are versioned under **`/api/v1`** (with `/api` kept as an alias).
+Full reference with request/response schemas: **[docs/API.md](docs/API.md)**.
+
 | Method | Path             | Purpose                                              |
 | ------ | ---------------- | ---------------------------------------------------- |
 | POST   | `/api/translate` | Translate text (mode, context, preserveFormatting)   |
@@ -168,4 +224,10 @@ Errors are returned as `{ "error": { "code", "message" } }`.
 
 ## ⚙️ Configuration
 
-Non-secret defaults live in `wrangler.toml` under `[vars]` (`DEFAULT_MODEL`, `DEFAULT_TARGET_LANG`). Secrets (`OPENAI_API_KEY`) are set via `.dev.vars` locally or `wrangler secret put` in production.
+Non-secret defaults live in `wrangler.toml` under `[vars]` (`DEFAULT_MODEL`, `DEFAULT_TARGET_LANG`, `APP_VERSION`, `RATE_LIMIT`). Secrets (`OPENAI_API_KEY`) are set via `.dev.vars` locally or `wrangler secret put` in production.
+
+## 📚 More
+
+- [API reference](docs/API.md)
+- [Changelog](CHANGELOG.md)
+- [License](LICENSE) — MIT
