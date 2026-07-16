@@ -11,7 +11,7 @@ export const CSP = [
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "font-src 'self' https://fonts.gstatic.com",
   "img-src 'self' data: https://cdn.jsdelivr.net",
-  "connect-src 'self'",
+  "connect-src 'self' https://cdn.jsdelivr.net",
   "media-src 'self' blob:",
   "worker-src 'self'",
   "manifest-src 'self'",

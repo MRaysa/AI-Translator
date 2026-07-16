@@ -1,7 +1,7 @@
 /* Service worker — network-first for same-origin GET requests (so online
  * users always get the latest code), falling back to cache when offline.
  * API requests are always network (never cached). */
-const CACHE = "ai-translator-v2";
+const CACHE = "ai-translator-v3";
 const CORE = [
   "/",
   "/index.html",
@@ -53,7 +53,14 @@ self.addEventListener("activate", (e) => {
 self.addEventListener("fetch", (e) => {
   const req = e.request;
   const url = new URL(req.url);
-  if (req.method !== "GET" || url.pathname.startsWith("/api/")) return;
+  // Only handle same-origin GETs. Cross-origin requests (e.g. flag CDN, fonts)
+  // are left to the browser so the page CSP governs them directly.
+  if (
+    req.method !== "GET" ||
+    url.origin !== self.location.origin ||
+    url.pathname.startsWith("/api/")
+  )
+    return;
 
   // Network-first: always try the network so the freshest code wins; cache is
   // updated on success and used only as an offline fallback.
