@@ -17,17 +17,20 @@ The frontend UI and the backend API both run inside a **single Cloudflare Worker
 
 ![AI Translator](./public/og-image.svg)
 
-## 📸 Screenshots
+## 📸 Screenshots & demo
 
-> Add your captures to `docs/screenshots/` (paths below) — they render here automatically.
+Screenshots and a 20–30s demo GIF live in [`docs/screenshots/`](docs/screenshots/) — see the [capture guide](docs/screenshots/README.md). After adding the files, uncomment the block below to display them.
 
+<!-- Uncomment once the images exist in docs/screenshots/
 | Home                               | Translation + AI tools               | Lingo assistant                      |
 | ---------------------------------- | ------------------------------------ | ------------------------------------ |
 | ![Home](docs/screenshots/home.png) | ![Tools](docs/screenshots/tools.png) | ![Lingo](docs/screenshots/lingo.png) |
 
-## 🎬 Demo
-
 ![Demo](docs/screenshots/demo.gif)
+-->
+
+<!-- prettier-ignore -->
+> 💡 Tip: `og-image.svg` (shown above) is the branded preview; real UI captures go in `docs/screenshots/`.
 
 ## 🏗️ Architecture
 
