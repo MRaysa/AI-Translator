@@ -1,6 +1,7 @@
-/* Service worker — offline support via stale-while-revalidate for static
- * assets. API requests are always network (never cached). */
-const CACHE = "ai-translator-v1";
+/* Service worker — network-first for same-origin GET requests (so online
+ * users always get the latest code), falling back to cache when offline.
+ * API requests are always network (never cached). */
+const CACHE = "ai-translator-v2";
 const CORE = [
   "/", "/index.html", "/styles.css", "/app.js", "/manifest.webmanifest",
   "/favicon.svg", "/icon-maskable.svg",
@@ -30,18 +31,18 @@ self.addEventListener("fetch", (e) => {
   const url = new URL(req.url);
   if (req.method !== "GET" || url.pathname.startsWith("/api/")) return;
 
+  // Network-first: always try the network so the freshest code wins; cache is
+  // updated on success and used only as an offline fallback.
   e.respondWith(
     (async () => {
       const cache = await caches.open(CACHE);
-      const cached = await cache.match(req);
-      const network = fetch(req)
-        .then((res) => {
-          if (res && res.ok && url.origin === self.location.origin) cache.put(req, res.clone());
-          return res;
-        })
-        .catch(() => null);
-      e.waitUntil(network);
-      return cached || (await network) || Response.error();
+      try {
+        const res = await fetch(req);
+        if (res && res.ok && url.origin === self.location.origin) cache.put(req, res.clone());
+        return res;
+      } catch {
+        return (await cache.match(req)) || (await cache.match("/")) || Response.error();
+      }
     })()
   );
 });
