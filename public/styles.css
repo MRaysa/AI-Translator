@@ -349,11 +349,12 @@ body {
 .install-later:hover {
   color: var(--text);
 }
-@media (max-width: 480px) {
+/* On small screens the floating install banner and the Lingo greeting bubble
+   would crowd the chat launcher (bottom corners), so hide both — the chatbot
+   stays, and installing is still offered via the nav "Install" button. */
+@media (max-width: 640px) {
   .install-card {
-    left: 1rem;
-    right: 1rem;
-    width: auto;
+    display: none;
   }
 }
 
