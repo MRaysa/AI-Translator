@@ -1,0 +1,18 @@
+name = "translator-app"
+main = "src/index.js"
+compatibility_date = "2026-07-16"
+compatibility_flags = ["nodejs_compat"]
+
+# Serve the static frontend from ./public.
+# Non-matching paths (e.g. /api/*) fall through to the Worker.
+[assets]
+directory = "./public"
+
+# Non-secret defaults (safe to commit).
+[vars]
+DEFAULT_MODEL = "gpt-4o-mini"
+DEFAULT_TARGET_LANG = "english"
+
+# Secrets are NOT stored here. Set them with:
+#   npx wrangler secret put OPENAI_API_KEY
+# For local dev, put OPENAI_API_KEY in .dev.vars (git-ignored).

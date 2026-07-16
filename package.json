@@ -1,0 +1,23 @@
+{
+  "name": "translator-app",
+  "version": "1.0.0",
+  "description": "Web-based translator app on Cloudflare Workers using OpenAI",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "list-models": "node scripts/list-models.js"
+  },
+  "dependencies": {
+    "hono": "^4.6.14",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.5.40",
+    "vitest": "^2.1.8",
+    "wrangler": "^3.99.0"
+  }
+}
