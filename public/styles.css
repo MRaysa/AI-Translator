@@ -282,7 +282,7 @@ textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 4
 /* ---- Options row (context + preserve) ---- */
 .options-row { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem; margin-top: 0.9rem; }
 .opt { display: inline-flex; align-items: center; gap: 0.6rem; }
-.ctx-select { min-width: 190px; }
+.ctx-select { width: 210px; flex: 0 0 auto; }
 /* Icon inside custom-select trigger & options */
 .cs-ic { display: inline-flex; align-items: center; flex-shrink: 0; }
 .cs-ic svg { width: 16px; height: 16px; color: var(--accent); }

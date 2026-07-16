@@ -29,6 +29,7 @@ export async function loadContexts() {
   state.contextPicker = createSearchableSelect(els.context, {
     options: contexts.map((c) => ({ code: c.key, name: c.label })),
     value: "general",
+    searchable: false,
     renderIcon: (code) => `<span class="cs-ic">${CONTEXT_ICONS[code] || ""}</span>`,
   });
 }
