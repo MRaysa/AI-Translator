@@ -1,5 +1,14 @@
 # AI Translator
 
+[![CI](https://github.com/MRaysa/AI-Translator/actions/workflows/ci.yml/badge.svg)](https://github.com/MRaysa/AI-Translator/actions/workflows/ci.yml)
+![Cloudflare Workers](https://img.shields.io/badge/Cloudflare%20Workers-F38020?logo=cloudflare&logoColor=white)
+![Hono](https://img.shields.io/badge/Hono-E36002?logo=hono&logoColor=white)
+![OpenAI](https://img.shields.io/badge/OpenAI-412991?logo=openai&logoColor=white)
+![Vitest](https://img.shields.io/badge/Vitest-6E9F18?logo=vitest&logoColor=white)
+![Tests](https://img.shields.io/badge/tests-23%20passing-brightgreen)
+![Edge Runtime](https://img.shields.io/badge/100%25-edge%20runtime-0aa8d2)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+
 A full-stack **AI language studio** running entirely on **Cloudflare Workers**. It goes far beyond word-for-word translation — tone modes, domain contexts, an AI tool suite, a chat assistant, text-to-speech, and reverse-translation accuracy checks — across **240+ languages**, powered by **OpenAI**.
 
 The frontend UI and the backend API both run inside a **single Cloudflare Worker** — one deploy, one origin, no servers to manage. The OpenAI key stays server-side and is never exposed to the browser.
