@@ -1548,14 +1548,19 @@ textarea::-webkit-scrollbar-thumb {
 /* ---- Toast ---- */
 .toast {
   position: fixed;
-  bottom: 1.5rem;
-  left: 50%;
-  transform: translateX(-50%) translateY(20px);
+  top: 1.25rem;
+  right: 1.25rem;
+  left: auto;
+  bottom: auto;
+  transform: translateY(-16px);
+  max-width: min(360px, calc(100vw - 2rem));
   padding: 0.7rem 1.1rem;
   background: var(--grad);
   color: #fff;
   font-size: 0.85rem;
   font-weight: 600;
+  line-height: 1.4;
+  text-align: left;
   border-radius: 12px;
   box-shadow: var(--shadow);
   opacity: 0;
@@ -1563,11 +1568,11 @@ textarea::-webkit-scrollbar-thumb {
   transition:
     opacity 0.25s ease,
     transform 0.25s ease;
-  z-index: 100;
+  z-index: 300;
 }
 .toast.show {
   opacity: 1;
-  transform: translateX(-50%) translateY(0);
+  transform: translateY(0);
 }
 
 /* ---- Floating AI Assistant (Lingo) ---- */

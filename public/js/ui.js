@@ -8,7 +8,9 @@ export function toast(msg) {
   els.toast.textContent = msg;
   els.toast.classList.add("show");
   clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => els.toast.classList.remove("show"), 1600);
+  // Longer messages stay up longer so they can be read.
+  const ms = Math.min(6000, Math.max(1800, msg.length * 55));
+  toastTimer = setTimeout(() => els.toast.classList.remove("show"), ms);
 }
 
 export function setStatus(msg, isError = false) {

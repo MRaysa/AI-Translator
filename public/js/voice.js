@@ -47,11 +47,26 @@ export function initVoice() {
   let recognition = null;
   let listening = false;
 
-  btn.addEventListener("click", () => {
+  const BLOCKED_MSG =
+    "Microphone is blocked. Click the 🔒 / camera icon in the address bar → allow Microphone, then try again.";
+
+  btn.addEventListener("click", async () => {
     if (listening) {
       recognition?.stop();
       return;
     }
+
+    // Ask for mic permission up front so the browser shows a clear prompt.
+    try {
+      if (navigator.mediaDevices?.getUserMedia) {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        stream.getTracks().forEach((t) => t.stop()); // only needed the grant
+      }
+    } catch {
+      toast(BLOCKED_MSG);
+      return;
+    }
+
     recognition = new SR();
     const src = state.sourcePicker?.getValue();
     recognition.lang = (src && src !== "auto" && BCP47[src]) || navigator.language || "en-US";
@@ -71,7 +86,9 @@ export function initVoice() {
     recognition.onerror = (e) => {
       listening = false;
       btn.classList.remove("listening");
-      toast(e.error === "not-allowed" ? "Microphone permission denied" : "Voice input error");
+      if (e.error === "not-allowed" || e.error === "service-not-allowed") toast(BLOCKED_MSG);
+      else if (e.error === "no-speech") toast("Didn't catch that — try speaking again.");
+      else if (e.error !== "aborted") toast("Voice input error. Please try again.");
     };
     recognition.onresult = (e) => {
       let transcript = "";
