@@ -13,6 +13,7 @@ import { loadModes, loadContexts, loadLanguages } from "./js/languages.js";
 import { restoreDraft } from "./js/input.js";
 import { setStatus } from "./js/ui.js";
 import { initPwa } from "./js/pwa.js";
+import { initVoice } from "./js/voice.js";
 
 // Wire up UI + event handlers.
 initPwa();
@@ -22,6 +23,7 @@ initTranslate();
 initChat();
 initAssistant();
 initHistory();
+initVoice();
 
 // Load data (independent; failures are non-fatal except languages).
 initTools().catch(() => {});

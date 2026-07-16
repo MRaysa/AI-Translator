@@ -673,6 +673,21 @@ textarea:focus {
   opacity: 0.6;
   cursor: progress;
 }
+.mini-btn.listening {
+  color: #fff;
+  background: var(--danger);
+  border-color: transparent;
+  animation: mic-pulse 1.3s ease-in-out infinite;
+}
+@keyframes mic-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(229, 72, 77, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(229, 72, 77, 0);
+  }
+}
 
 .toolbar {
   display: flex;

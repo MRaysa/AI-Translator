@@ -16,6 +16,8 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   Detect Emotion), reverse-translation accuracy check.
 - **Assistants** — per-translation AI chat and a floating "Lingo" chatbot.
 - **Text-to-speech** — listen to translations (OpenAI TTS).
+- **Voice input** — speak to fill the input via the Web Speech API (graceful
+  fallback where unsupported).
 - **Experience** — translation history + draft auto-save (localStorage),
   live word/character/reading-time stats, light/dark theme, responsive
   landing page.

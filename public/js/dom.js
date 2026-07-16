@@ -25,6 +25,7 @@ export const els = {
   toolCopy: $("toolCopy"),
   simBadge: $("simBadge"),
   clear: $("clear"),
+  mic: $("mic"),
   stats: $("stats"),
   statWords: $("statWords"),
   statChars: $("statChars"),
