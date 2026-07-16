@@ -17,12 +17,11 @@ The frontend UI and the backend API both run inside a **single Cloudflare Worker
 
 ![AI Translator](./public/og-image.svg)
 
-## 📸 Screenshots
+## 📸 Screenshots & demo
 
+- 🎬 [**Watch the demo video**](docs/screenshots/demo.mp4) (~30s)
 - 🌙 [Home — dark mode](docs/screenshots/home.png)
 - ☀️ [Home — light mode](docs/screenshots/home-light.png)
-
-_A 20–30s demo GIF can also be added to [`docs/screenshots/`](docs/screenshots/) — see the [capture guide](docs/screenshots/README.md)._
 
 ## 🏗️ Architecture
 
