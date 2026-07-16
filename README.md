@@ -19,9 +19,11 @@ The frontend UI and the backend API both run inside a **single Cloudflare Worker
 
 ## 📸 Screenshots
 
-![AI Translator home](docs/screenshots/home.png)
+<p align="center">
+  <img src="docs/screenshots/home.png" alt="AI Translator home" width="720" />
+</p>
 
-_More captures and a 20–30s demo GIF can be added to [`docs/screenshots/`](docs/screenshots/) — see the [capture guide](docs/screenshots/README.md)._
+<p align="center"><em>More captures and a 20–30s demo GIF can be added to <a href="docs/screenshots/">docs/screenshots/</a> — see the <a href="docs/screenshots/README.md">capture guide</a>.</em></p>
 
 ## 🏗️ Architecture
 
