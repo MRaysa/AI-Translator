@@ -31,18 +31,27 @@ app.route("/api/tools", tools);
 app.route("/api/chat", chat);
 app.route("/api/assistant", assistant);
 
-// Unknown /api/* path
-app.notFound((c) => {
-  // Only claim 404 for API paths; static assets are handled by the
-  // [assets] binding before requests reach the Worker.
+// Not found: JSON for API routes, custom 404 page otherwise.
+app.notFound(async (c) => {
   if (c.req.path.startsWith("/api/")) {
     return c.json(
       { error: { code: "NOT_FOUND", message: "No such API route." } },
       404
     );
   }
-  return c.text("Not found", 404);
+  return serveAsset(c, "/404.html", 404, "Not found");
 });
+
+/** Serves a static HTML asset (e.g. error pages) with a status override. */
+async function serveAsset(c, path, status, fallback) {
+  try {
+    const res = await c.env.ASSETS.fetch(new URL(path, c.req.url));
+    const html = await res.text();
+    return c.html(html, status);
+  } catch {
+    return c.text(fallback, status);
+  }
+}
 
 // Central error handler
 app.onError(errorHandler);

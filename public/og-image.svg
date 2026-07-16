@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0c17"/>
+      <stop offset="1" stop-color="#161a34"/>
+    </linearGradient>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#7c5cff"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.4" r="0.6">
+      <stop offset="0" stop-color="#7c5cff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#7c5cff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <g transform="translate(90 250)">
+    <rect width="120" height="120" rx="28" fill="url(#grad)"/>
+    <g fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" transform="translate(24 24) scale(1.15)">
+      <path d="M13 20h17"/><path d="M21.5 15v5"/><path d="M27 20c0 7-6 12-13 14"/>
+      <path d="M18 28c3 3.5 7 6 11 7"/><path d="M34 47l7.5-17 7.5 17"/><path d="M37.5 40h8"/>
+    </g>
+  </g>
+  <text x="240" y="300" fill="#ffffff" font-size="82" font-weight="800" letter-spacing="-2">AI Translator</text>
+  <text x="242" y="365" fill="#8b93b4" font-size="34" font-weight="500">240+ languages · AI tools · chat · on the edge</text>
+  <g transform="translate(242 430)" font-size="26" font-weight="600">
+    <rect x="0" y="0" width="200" height="52" rx="26" fill="none" stroke="#334155"/>
+    <text x="30" y="34" fill="#e2e8f0">6 Tone Modes</text>
+    <rect x="224" y="0" width="180" height="52" rx="26" fill="none" stroke="#334155"/>
+    <text x="252" y="34" fill="#e2e8f0">12 AI Tools</text>
+    <rect x="428" y="0" width="170" height="52" rx="26" fill="none" stroke="#334155"/>
+    <text x="456" y="34" fill="#e2e8f0">AI Chat</text>
+  </g>
+  <text x="242" y="545" fill="#5b6486" font-size="24" font-weight="600">Powered by OpenAI · Cloudflare Workers</text>
+</svg>

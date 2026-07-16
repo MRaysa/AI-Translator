@@ -5,8 +5,10 @@ compatibility_flags = ["nodejs_compat"]
 
 # Serve the static frontend from ./public.
 # Non-matching paths (e.g. /api/*) fall through to the Worker.
+# The binding lets the Worker fetch assets (e.g. custom 404/500 pages).
 [assets]
 directory = "./public"
+binding = "ASSETS"
 
 # Non-secret defaults (safe to commit).
 [vars]

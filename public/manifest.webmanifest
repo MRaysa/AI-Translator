@@ -1,0 +1,16 @@
+{
+  "name": "AI Translator",
+  "short_name": "Translator",
+  "description": "Translate across 240+ languages with AI tone modes, tools, chat and text-to-speech.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0a0c17",
+  "theme_color": "#0a0c17",
+  "categories": ["productivity", "utilities", "education"],
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/icon-maskable.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ]
+}

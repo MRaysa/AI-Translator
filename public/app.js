@@ -12,8 +12,10 @@ import { initHistory, renderHistory } from "./js/history.js";
 import { loadModes, loadContexts, loadLanguages } from "./js/languages.js";
 import { restoreDraft } from "./js/input.js";
 import { setStatus } from "./js/ui.js";
+import { initPwa } from "./js/pwa.js";
 
 // Wire up UI + event handlers.
+initPwa();
 initTheme();
 initScrollspy();
 initTranslate();
