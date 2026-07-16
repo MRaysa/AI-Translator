@@ -1,6 +1,9 @@
 import { Hono } from "hono";
 import { corsMiddleware } from "./middleware/cors.js";
 import { errorHandler } from "./middleware/errorHandler.js";
+import { requestContext } from "./middleware/requestContext.js";
+import { rateLimit } from "./middleware/rateLimit.js";
+import { securityHeaders } from "./middleware/securityHeaders.js";
 import translate from "./routes/translate.js";
 import models from "./routes/models.js";
 import health from "./routes/health.js";
@@ -13,31 +16,43 @@ import contexts from "./routes/contexts.js";
 import chat from "./routes/chat.js";
 import assistant from "./routes/assistant.js";
 
+// -------- API sub-app (mounted under a versioned prefix) --------
+const api = new Hono();
+
+api.use("*", requestContext); // request ID + access logging
+api.use("*", corsMiddleware);
+api.use("*", securityHeaders);
+// Rate limit everything except the health check (so monitors aren't throttled).
+api.use("*", async (c, next) => (c.req.path.endsWith("/health") ? next() : rateLimit(c, next)));
+
+api.route("/health", health);
+api.route("/models", models);
+api.route("/languages", languages);
+api.route("/modes", modes);
+api.route("/contexts", contexts);
+api.route("/translate", translate);
+api.route("/explain", explain);
+api.route("/speak", speak);
+api.route("/tools", tools);
+api.route("/chat", chat);
+api.route("/assistant", assistant);
+
+// JSON 404 + error responses for the API surface.
+api.notFound((c) =>
+  c.json({ error: { code: "NOT_FOUND", message: "No such API route." } }, 404)
+);
+api.onError(errorHandler);
+
 const app = new Hono();
 
-// Cross-cutting middleware
-app.use("/api/*", corsMiddleware);
-
-// API routes
-app.route("/api/health", health);
-app.route("/api/models", models);
-app.route("/api/languages", languages);
-app.route("/api/modes", modes);
-app.route("/api/contexts", contexts);
-app.route("/api/translate", translate);
-app.route("/api/explain", explain);
-app.route("/api/speak", speak);
-app.route("/api/tools", tools);
-app.route("/api/chat", chat);
-app.route("/api/assistant", assistant);
+// Versioned API + unversioned alias (backward compatible).
+app.route("/api/v1", api);
+app.route("/api", api);
 
 // Not found: JSON for API routes, custom 404 page otherwise.
 app.notFound(async (c) => {
   if (c.req.path.startsWith("/api/")) {
-    return c.json(
-      { error: { code: "NOT_FOUND", message: "No such API route." } },
-      404
-    );
+    return c.json({ error: { code: "NOT_FOUND", message: "No such API route." } }, 404);
   }
   return serveAsset(c, "/404.html", 404, "Not found");
 });
@@ -53,7 +68,6 @@ async function serveAsset(c, path, status, fallback) {
   }
 }
 
-// Central error handler
 app.onError(errorHandler);
 
 export default app;

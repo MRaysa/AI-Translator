@@ -26,7 +26,7 @@ describe("GET /api/health", () => {
   it("returns ok", async () => {
     const res = await app.request("/api/health", {}, env);
     expect(res.status).toBe(200);
-    expect(await res.json()).toEqual({ status: "ok", service: "translator-app" });
+    expect(await res.json()).toMatchObject({ status: "ok", service: "translator-app" });
   });
 });
 
@@ -267,6 +267,37 @@ describe("POST /api/assistant", () => {
   it("rejects empty messages", async () => {
     const res = await post("/api/assistant", { messages: [] });
     expect(res.status).toBe(400);
+  });
+});
+
+describe("engineering: request id, versioning, rate limit", () => {
+  it("returns X-Request-Id and version info on health (/api and /api/v1)", async () => {
+    for (const p of ["/api/health", "/api/v1/health"]) {
+      const res = await app.request(p, {}, env);
+      expect(res.status).toBe(200);
+      expect(res.headers.get("X-Request-Id")).toBeTruthy();
+      const body = await res.json();
+      expect(body.version).toBe("1.0.0");
+      expect(body.time).toBeTruthy();
+    }
+  });
+
+  it("sets security headers on API responses", async () => {
+    const res = await app.request("/api/v1/health", {}, env);
+    expect(res.headers.get("X-Content-Type-Options")).toBe("nosniff");
+    expect(res.headers.get("X-Frame-Options")).toBe("DENY");
+    expect(res.headers.get("Content-Security-Policy")).toContain("default-src 'self'");
+  });
+
+  it("rate limits after the configured limit", async () => {
+    const rlEnv = { ...env, RATE_LIMIT: "2", RATE_WINDOW_SEC: "60" };
+    const headers = { "CF-Connecting-IP": "203.0.113.9" };
+    const call = () => app.request("/api/v1/modes", { headers }, rlEnv);
+    expect((await call()).status).toBe(200);
+    expect((await call()).status).toBe(200);
+    const third = await call();
+    expect(third.status).toBe(429);
+    expect((await third.json()).error.code).toBe("RATE_LIMITED");
   });
 });
 

@@ -14,6 +14,9 @@ binding = "ASSETS"
 [vars]
 DEFAULT_MODEL = "gpt-4o-mini"
 DEFAULT_TARGET_LANG = "english"
+APP_VERSION = "1.0.0"
+RATE_LIMIT = "60"
+RATE_WINDOW_SEC = "60"
 
 # Secrets are NOT stored here. Set them with:
 #   npx wrangler secret put OPENAI_API_KEY

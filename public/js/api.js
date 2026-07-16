@@ -2,14 +2,16 @@
  * Thin client for the Worker API. Each method returns parsed JSON and throws
  * an Error with the server's message on failure — callers just try/catch.
  */
+const BASE = "/api/v1";
+
 async function getJSON(path) {
-  const res = await fetch(path);
+  const res = await fetch(BASE + path);
   if (!res.ok) throw new Error(`Request failed: ${path}`);
   return res.json();
 }
 
 async function postJSON(path, body) {
-  const res = await fetch(path, {
+  const res = await fetch(BASE + path, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body),
@@ -20,20 +22,20 @@ async function postJSON(path, body) {
 }
 
 export const api = {
-  languages: () => getJSON("/api/languages"),
-  modes: () => getJSON("/api/modes"),
-  contexts: () => getJSON("/api/contexts"),
-  tools: () => getJSON("/api/tools"),
+  languages: () => getJSON("/languages"),
+  modes: () => getJSON("/modes"),
+  contexts: () => getJSON("/contexts"),
+  tools: () => getJSON("/tools"),
 
-  translate: (payload) => postJSON("/api/translate", payload),
-  runTool: (payload) => postJSON("/api/tools/run", payload),
-  explain: (payload) => postJSON("/api/explain", payload),
-  chat: (payload) => postJSON("/api/chat", payload),
-  assistant: (payload) => postJSON("/api/assistant", payload),
+  translate: (payload) => postJSON("/translate", payload),
+  runTool: (payload) => postJSON("/tools/run", payload),
+  explain: (payload) => postJSON("/explain", payload),
+  chat: (payload) => postJSON("/chat", payload),
+  assistant: (payload) => postJSON("/assistant", payload),
 
   /** Text-to-speech — returns an audio Blob. */
   async speak(text) {
-    const res = await fetch("/api/speak", {
+    const res = await fetch(BASE + "/speak", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text }),
