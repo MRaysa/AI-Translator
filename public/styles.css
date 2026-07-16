@@ -166,6 +166,48 @@ body {
 }
 .gh-btn:hover { transform: translateY(-2px); border-color: var(--accent); }
 
+.install-btn {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  padding: 0.55rem 0.95rem;
+  border: none; border-radius: 11px;
+  background: var(--grad); color: #fff;
+  font-family: inherit; font-weight: 700; font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 10px 24px -10px var(--ring);
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+.install-btn[hidden] { display: none; }
+.install-btn:hover { transform: translateY(-2px); }
+
+/* PWA install banner (bottom-left; Lingo bot is bottom-right) */
+.install-card {
+  position: fixed;
+  bottom: 1.5rem; left: 1.5rem;
+  z-index: 200;
+  display: flex; align-items: center; gap: 0.85rem;
+  width: min(360px, calc(100vw - 2rem));
+  padding: 0.9rem 1rem;
+  background: var(--surface-solid);
+  border: 1px solid var(--border-strong);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  animation: install-in 0.35s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.install-card[hidden] { display: none; }
+@keyframes install-in { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.install-card-icon { border-radius: 12px; flex-shrink: 0; }
+.install-card-body { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+.install-card-body strong { font-size: 0.95rem; font-weight: 700; }
+.install-card-body span { font-size: 0.78rem; color: var(--muted); line-height: 1.35; }
+.install-card-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 0.3rem; flex-shrink: 0; }
+.install-card-actions .install-btn { padding: 0.5rem 0.8rem; font-size: 0.82rem; white-space: nowrap; }
+.install-later {
+  border: none; background: none; cursor: pointer;
+  font-family: inherit; font-size: 0.72rem; font-weight: 600; color: var(--faint);
+}
+.install-later:hover { color: var(--text); }
+@media (max-width: 480px) { .install-card { left: 1rem; right: 1rem; width: auto; } }
+
 /* ---- Hero ---- */
 .hero { text-align: center; padding: 3rem 1rem 2.4rem; animation: rise 0.6s cubic-bezier(0.2,0.7,0.2,1) both; }
 @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }

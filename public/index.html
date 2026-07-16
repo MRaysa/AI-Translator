@@ -69,6 +69,10 @@
         </div>
 
         <div class="nav-actions">
+          <button id="installBtn" class="install-btn" hidden title="Install this app">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg>
+            <span>Install</span>
+          </button>
           <button id="theme" class="icon-btn" title="Toggle theme" aria-label="Toggle theme">
             <svg class="i-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
             <svg class="i-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
@@ -361,6 +365,19 @@
     </div>
 
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <!-- ---------- PWA install banner ---------- -->
+    <div id="installCard" class="install-card" hidden role="dialog" aria-label="Install app">
+      <img class="install-card-icon" src="/icon-192.png" alt="" width="46" height="46" />
+      <div class="install-card-body">
+        <strong>Install AI Translator</strong>
+        <span>Add it to your device for instant, app-like access.</span>
+      </div>
+      <div class="install-card-actions">
+        <button id="installCardBtn" class="install-btn">Install App ↓</button>
+        <button id="installCardLater" class="install-later">Maybe later</button>
+      </div>
+    </div>
 
     <!-- ---------- Floating AI Assistant (Lingo) ---------- -->
     <div class="bot-launcher">

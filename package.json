@@ -18,6 +18,7 @@
   "devDependencies": {
     "@cloudflare/vitest-pool-workers": "^0.5.40",
     "jsdom": "^29.1.1",
+    "sharp": "^0.35.3",
     "vitest": "^2.1.8",
     "wrangler": "^3.99.0"
   }

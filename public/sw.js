@@ -4,7 +4,7 @@
 const CACHE = "ai-translator-v2";
 const CORE = [
   "/", "/index.html", "/styles.css", "/app.js", "/manifest.webmanifest",
-  "/favicon.svg", "/icon-maskable.svg",
+  "/favicon.svg", "/icon-192.png", "/icon-512.png", "/icon-maskable-512.png",
   "/js/dom.js", "/js/state.js", "/js/ui.js", "/js/theme.js", "/js/scrollspy.js",
   "/js/input.js", "/js/api.js", "/js/markdown.js", "/js/flags.js", "/js/icons.js",
   "/js/searchableSelect.js", "/js/translate.js",
