@@ -6,7 +6,7 @@ const CORE = [
   "/favicon.svg", "/icon-maskable.svg",
   "/js/dom.js", "/js/state.js", "/js/ui.js", "/js/theme.js", "/js/scrollspy.js",
   "/js/input.js", "/js/api.js", "/js/markdown.js", "/js/flags.js", "/js/icons.js",
-  "/js/searchableSelect.js", "/js/customSelect.js", "/js/translate.js",
+  "/js/searchableSelect.js", "/js/translate.js",
   "/js/languages.js", "/js/tools.js", "/js/chat.js", "/js/assistant.js",
   "/js/history.js", "/js/pwa.js",
 ];

@@ -1,10 +1,11 @@
 import { flagHtml } from "./flags.js";
 
 /**
- * A searchable, keyboard-navigable language dropdown (combobox).
- * `mount` is the container element; returns { getValue, getName, setValue }.
+ * A searchable, keyboard-navigable dropdown (combobox).
+ * `mount` is the container; `renderIcon(code)` returns the leading icon markup
+ * (defaults to a country flag). Returns { getValue, getName, setValue }.
  */
-export function createSearchableSelect(mount, { options, value }) {
+export function createSearchableSelect(mount, { options, value, renderIcon = flagHtml }) {
   let current = value;
   let activeIndex = -1;
   let filtered = options;
@@ -31,7 +32,7 @@ export function createSearchableSelect(mount, { options, value }) {
   const nameOf = (code) => options.find((o) => o.code === code)?.name || code;
 
   function renderLabel() {
-    flagEl.innerHTML = flagHtml(current);
+    flagEl.innerHTML = renderIcon(current);
     label.textContent = nameOf(current);
   }
 
@@ -49,7 +50,7 @@ export function createSearchableSelect(mount, { options, value }) {
         ]
           .filter(Boolean)
           .join(" ");
-        return `<li class="${cls}" role="option" data-code="${o.code}">${flagHtml(o.code)}<span>${o.name}</span></li>`;
+        return `<li class="${cls}" role="option" data-code="${o.code}">${renderIcon(o.code)}<span>${o.name}</span></li>`;
       })
       .join("");
   }

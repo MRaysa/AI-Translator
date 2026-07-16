@@ -3,7 +3,6 @@ import { $, els } from "./dom.js";
 import { state } from "./state.js";
 import { MODE_ICONS, CONTEXT_ICONS } from "./icons.js";
 import { createSearchableSelect } from "./searchableSelect.js";
-import { createCustomSelect } from "./customSelect.js";
 import { translate } from "./translate.js";
 
 /** Loads the tone modes and wires the mode pills. */
@@ -24,13 +23,13 @@ export async function loadModes() {
   });
 }
 
-/** Loads the domain contexts into a themed custom dropdown. */
+/** Loads the domain contexts into a searchable dropdown (same as From/To). */
 export async function loadContexts() {
   const { contexts } = await api.contexts();
-  state.contextPicker = createCustomSelect(els.context, {
-    options: contexts.map((c) => ({ value: c.key, label: c.label })),
+  state.contextPicker = createSearchableSelect(els.context, {
+    options: contexts.map((c) => ({ code: c.key, name: c.label })),
     value: "general",
-    icons: CONTEXT_ICONS,
+    renderIcon: (code) => `<span class="cs-ic">${CONTEXT_ICONS[code] || ""}</span>`,
   });
 }
 
