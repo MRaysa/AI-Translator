@@ -15,11 +15,9 @@ export const translateRequestSchema = z.object({
     .trim()
     .min(1, "text must not be empty")
     .max(5000, "text must be 5000 characters or fewer"),
-  targetLang: z
-    .string({ required_error: "targetLang is required" })
-    .refine(isValidTarget, {
-      message: "targetLang is not a supported language code",
-    }),
+  targetLang: z.string({ required_error: "targetLang is required" }).refine(isValidTarget, {
+    message: "targetLang is not a supported language code",
+  }),
   sourceLang: z
     .string()
     .refine(isValidSource, {

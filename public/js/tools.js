@@ -5,7 +5,15 @@ import { renderMarkdown } from "./markdown.js";
 import { toast } from "./ui.js";
 import { TOOL_ICONS } from "./icons.js";
 
-const REWRITE_TOOLS = new Set(["improve", "summarize", "email", "social", "simplify", "child", "grammar"]);
+const REWRITE_TOOLS = new Set([
+  "improve",
+  "summarize",
+  "email",
+  "social",
+  "simplify",
+  "child",
+  "grammar",
+]);
 
 function openToolPanel(title) {
   els.toolTitle.textContent = title;
@@ -55,7 +63,8 @@ function similarity(a, b) {
   b = b.trim().toLowerCase();
   if (!a || !b) return 0;
   if (a === b) return 100;
-  const m = a.length, n = b.length;
+  const m = a.length,
+    n = b.length;
   const dp = Array.from({ length: m + 1 }, (_, i) => [i, ...Array(n).fill(0)]);
   for (let j = 0; j <= n; j++) dp[0][j] = j;
   for (let i = 1; i <= m; i++) {
@@ -72,7 +81,8 @@ function similarity(a, b) {
 
 async function reverseCheck() {
   if (!state.lastResult) return;
-  const reverseTarget = state.lastResult.sourceLang !== "auto" ? state.lastResult.sourceLang : "english";
+  const reverseTarget =
+    state.lastResult.sourceLang !== "auto" ? state.lastResult.sourceLang : "english";
   openToolPanel("🔄 Reverse check");
   try {
     const data = await api.translate({
@@ -110,9 +120,15 @@ export async function initTools() {
   const { tools } = await api.tools();
   const chip = (key, label, special) =>
     `<button type="button" class="chip-btn" data-tool="${key}"${special ? ` data-special="${special}"` : ""}>${TOOL_ICONS[key] || ""}<span>${label}</span></button>`;
-  els.chipsRewrite.innerHTML = tools.filter((t) => t.group === "rewrite").map((t) => chip(t.key, t.label)).join("");
+  els.chipsRewrite.innerHTML = tools
+    .filter((t) => t.group === "rewrite")
+    .map((t) => chip(t.key, t.label))
+    .join("");
   els.chipsAnalyze.innerHTML =
     chip("explain", "Explain", "explain") +
-    tools.filter((t) => t.group === "analyze").map((t) => chip(t.key, t.label)).join("") +
+    tools
+      .filter((t) => t.group === "analyze")
+      .map((t) => chip(t.key, t.label))
+      .join("") +
     chip("reverse", "Reverse", "reverse");
 }

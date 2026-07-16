@@ -4,8 +4,7 @@
  * ordered/unordered lists. Safe against injection (escape before markup).
  */
 export function renderMarkdown(src) {
-  const escape = (s) =>
-    s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  const escape = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   const inline = (s) =>
     escape(s)
       .replace(/`([^`]+)`/g, "<code>$1</code>")
@@ -27,10 +26,18 @@ export function renderMarkdown(src) {
     const ul = line.match(/^\s*[-*]\s+(.*)$/);
     const ol = line.match(/^\s*\d+\.\s+(.*)$/);
     if (ul) {
-      if (listType !== "ul") { closeList(); html += "<ul>"; listType = "ul"; }
+      if (listType !== "ul") {
+        closeList();
+        html += "<ul>";
+        listType = "ul";
+      }
       html += `<li>${inline(ul[1])}</li>`;
     } else if (ol) {
-      if (listType !== "ol") { closeList(); html += "<ol>"; listType = "ol"; }
+      if (listType !== "ol") {
+        closeList();
+        html += "<ol>";
+        listType = "ol";
+      }
       html += `<li>${inline(ol[1])}</li>`;
     } else if (line.trim() === "") {
       closeList();

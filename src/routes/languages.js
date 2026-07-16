@@ -9,8 +9,7 @@ const languages = new Hono();
  * `source` includes "auto"; `target` does not.
  */
 languages.get("/", (c) => {
-  const toList = (map) =>
-    Object.entries(map).map(([code, name]) => ({ code, name }));
+  const toList = (map) => Object.entries(map).map(([code, name]) => ({ code, name }));
 
   return c.json({
     source: toList(SOURCE_LANGUAGES),

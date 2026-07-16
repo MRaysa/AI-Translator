@@ -10,7 +10,10 @@
       name="description"
       content="A full AI language studio: translate across 240+ languages with tone modes, domain contexts, AI rewrite/analyze tools, a chat assistant and text-to-speech. Built on Cloudflare Workers."
     />
-    <meta name="keywords" content="AI translator, translate, OpenAI, Cloudflare Workers, language, text to speech, translation tools" />
+    <meta
+      name="keywords"
+      content="AI translator, translate, OpenAI, Cloudflare Workers, language, text to speech, translation tools"
+    />
     <meta name="author" content="Aysa Siddika Meem" />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#0a0c17" />
@@ -25,17 +28,29 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="AI Translator" />
     <meta property="og:title" content="AI Translator — 240+ languages, AI tools & chat" />
-    <meta property="og:description" content="Translate across 240+ languages with tone modes, AI tools, a chat assistant and text-to-speech. Built on Cloudflare Workers." />
+    <meta
+      property="og:description"
+      content="Translate across 240+ languages with tone modes, AI tools, a chat assistant and text-to-speech. Built on Cloudflare Workers."
+    />
     <meta property="og:url" content="https://translator-app.aysasiddikameem3141.workers.dev/" />
-    <meta property="og:image" content="https://translator-app.aysasiddikameem3141.workers.dev/og-image.svg" />
+    <meta
+      property="og:image"
+      content="https://translator-app.aysasiddikameem3141.workers.dev/og-image.svg"
+    />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="AI Translator — 240+ languages, AI tools & chat" />
-    <meta name="twitter:description" content="A full AI language studio on the edge — modes, tools, chat, TTS across 240+ languages." />
-    <meta name="twitter:image" content="https://translator-app.aysasiddikameem3141.workers.dev/og-image.svg" />
+    <meta
+      name="twitter:description"
+      content="A full AI language studio on the edge — modes, tools, chat, TTS across 240+ languages."
+    />
+    <meta
+      name="twitter:image"
+      content="https://translator-app.aysasiddikameem3141.workers.dev/og-image.svg"
+    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -57,7 +72,23 @@
       <nav class="nav">
         <div class="brand">
           <span class="brand-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8l6 6"></path><path d="M4 14l6-6 2-3"></path><path d="M2 5h12"></path><path d="M7 2h1"></path><path d="M22 22l-5-10-5 10"></path><path d="M14 18h6"></path></svg>
+            <svg
+              viewBox="0 0 24 24"
+              width="20"
+              height="20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M5 8l6 6"></path>
+              <path d="M4 14l6-6 2-3"></path>
+              <path d="M2 5h12"></path>
+              <path d="M7 2h1"></path>
+              <path d="M22 22l-5-10-5 10"></path>
+              <path d="M14 18h6"></path>
+            </svg>
           </span>
           <span class="brand-name"><b>AI</b> Translator</span>
         </div>
@@ -70,15 +101,64 @@
 
         <div class="nav-actions">
           <button id="installBtn" class="install-btn" hidden title="Install this app">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg>
+            <svg
+              viewBox="0 0 24 24"
+              width="16"
+              height="16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M12 3v12"></path>
+              <path d="m7 10 5 5 5-5"></path>
+              <path d="M5 21h14"></path>
+            </svg>
             <span>Install</span>
           </button>
           <button id="theme" class="icon-btn" title="Toggle theme" aria-label="Toggle theme">
-            <svg class="i-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
-            <svg class="i-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            <svg
+              class="i-sun"
+              viewBox="0 0 24 24"
+              width="18"
+              height="18"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="4"></circle>
+              <path
+                d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+              ></path>
+            </svg>
+            <svg
+              class="i-moon"
+              viewBox="0 0 24 24"
+              width="18"
+              height="18"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
           </button>
-          <a class="gh-btn" href="https://github.com/MRaysa/Translator" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.73 1.27 3.4.97.1-.75.4-1.27.73-1.56-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.4-5.28 5.69.41.36.78 1.08.78 2.18v3.23c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"></path></svg>
+          <a
+            class="gh-btn"
+            href="https://github.com/MRaysa/Translator"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path
+                d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.73 1.27 3.4.97.1-.75.4-1.27.73-1.56-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.4-5.28 5.69.41.36.78 1.08.78 2.18v3.23c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"
+              ></path>
+            </svg>
             <span>GitHub</span>
           </a>
         </div>
@@ -88,7 +168,13 @@
       <header id="home" class="hero">
         <h1 class="hero-title">
           <span class="sparkle" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor"><path d="M12 2l1.9 5.6L19.5 9l-5.6 1.9L12 16l-1.9-5.1L4.5 9l5.6-1.4L12 2z"></path><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15z" opacity=".7"></path></svg>
+            <svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor">
+              <path d="M12 2l1.9 5.6L19.5 9l-5.6 1.9L12 16l-1.9-5.1L4.5 9l5.6-1.4L12 2z"></path>
+              <path
+                d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15z"
+                opacity=".7"
+              ></path>
+            </svg>
           </span>
           AI Translator
         </h1>
@@ -102,13 +188,38 @@
         <section class="card">
           <div class="card-head">
             <span class="card-title">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+              <svg
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                <path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+              </svg>
               Input Text
             </span>
             <div class="head-actions">
               <span class="counter"><span id="count">0</span> / 5000</span>
               <button id="clear" class="mini-btn ghost" hidden title="Clear text">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><path d="M6 6l1 14a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-14"></path></svg>
+                <svg
+                  viewBox="0 0 24 24"
+                  width="14"
+                  height="14"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M3 6h18"></path>
+                  <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                  <path d="M6 6l1 14a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-14"></path>
+                </svg>
                 <span>Clear</span>
               </button>
             </div>
@@ -147,7 +258,21 @@
               <div id="sourceLang" class="ss"></div>
             </div>
             <button id="swap" class="swap" title="Swap languages" aria-label="Swap languages">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 1l4 4-4 4"></path><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><path d="M7 23l-4-4 4-4"></path><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg>
+              <svg
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M17 1l4 4-4 4"></path>
+                <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+                <path d="M7 23l-4-4 4-4"></path>
+                <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+              </svg>
             </button>
             <div class="lang-cell">
               <label class="lbl">To</label>
@@ -155,7 +280,9 @@
             </div>
             <button id="translate" class="cta">
               <span class="cta-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2l1.6 4.8L18 8l-4.4 1.2L12 14l-1.6-4.8L6 8l4.4-1.2L12 2z"></path></svg>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                  <path d="M12 2l1.6 4.8L18 8l-4.4 1.2L12 14l-1.6-4.8L6 8l4.4-1.2L12 2z"></path>
+                </svg>
               </span>
               <span class="spinner" hidden></span>
               <span class="cta-label">Translate</span>
@@ -167,16 +294,57 @@
         <section class="card">
           <div class="card-head">
             <span class="card-title">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8l6 6"></path><path d="M4 14l6-6 2-3"></path><path d="M2 5h12"></path><path d="M7 2h1"></path><path d="M22 22l-5-10-5 10"></path><path d="M14 18h6"></path></svg>
+              <svg
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5 8l6 6"></path>
+                <path d="M4 14l6-6 2-3"></path>
+                <path d="M2 5h12"></path>
+                <path d="M7 2h1"></path>
+                <path d="M22 22l-5-10-5 10"></path>
+                <path d="M14 18h6"></path>
+              </svg>
               Translation
             </span>
             <div class="out-actions">
               <button id="listen" class="mini-btn" hidden title="Listen">
-                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M19 5a9 9 0 0 1 0 14"></path></svg>
+                <svg
+                  viewBox="0 0 24 24"
+                  width="15"
+                  height="15"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M11 5L6 9H2v6h4l5 4V5z"></path>
+                  <path d="M15.5 8.5a5 5 0 0 1 0 7"></path>
+                  <path d="M19 5a9 9 0 0 1 0 14"></path>
+                </svg>
                 <span>Listen</span>
               </button>
               <button id="copy" class="mini-btn" hidden title="Copy">
-                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <svg
+                  viewBox="0 0 24 24"
+                  width="15"
+                  height="15"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="9" y="9" width="13" height="13" rx="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
                 <span>Copy</span>
               </button>
             </div>
@@ -187,14 +355,38 @@
           <div id="toolbar" class="toolbar" hidden>
             <div class="tool-group">
               <span class="tool-group-label">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"></path></svg>
+                <svg
+                  viewBox="0 0 24 24"
+                  width="14"
+                  height="14"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 20h9"></path>
+                  <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"></path>
+                </svg>
                 Rewrite
               </span>
               <div class="tool-chips" id="chipsRewrite"></div>
             </div>
             <div class="tool-group">
               <span class="tool-group-label">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+                <svg
+                  viewBox="0 0 24 24"
+                  width="14"
+                  height="14"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <path d="m21 21-4.3-4.3"></path>
+                </svg>
                 Analyze
               </span>
               <div class="tool-chips" id="chipsAnalyze"></div>
@@ -206,7 +398,19 @@
               <span id="toolTitle">Result</span>
               <span id="simBadge" class="sim-badge" hidden></span>
               <button id="toolCopy" class="tool-copy" hidden title="Copy result">
-                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <svg
+                  viewBox="0 0 24 24"
+                  width="13"
+                  height="13"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="9" y="9" width="13" height="13" rx="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
                 Copy
               </button>
             </div>
@@ -224,23 +428,67 @@
         <section id="chatCard" class="card" hidden>
           <div class="card-head">
             <span class="card-title">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+              <svg
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
               Ask AI about this translation
             </span>
           </div>
           <div id="chatMessages" class="chat-messages"></div>
           <div id="chatQuick" class="chat-quick">
-            <button type="button" class="chip-btn" data-q="Why did you choose this wording?">Why this word?</button>
-            <button type="button" class="chip-btn" data-q="Make it shorter.">Make it shorter</button>
-            <button type="button" class="chip-btn" data-q="Make it more formal.">More formal</button>
-            <button type="button" class="chip-btn" data-q="Make it more friendly.">Friendlier</button>
-            <button type="button" class="chip-btn" data-q="Does this sound natural to a native speaker?">Is it natural?</button>
-            <button type="button" class="chip-btn" data-q="Explain the grammar of the translation.">Explain grammar</button>
+            <button type="button" class="chip-btn" data-q="Why did you choose this wording?">
+              Why this word?
+            </button>
+            <button type="button" class="chip-btn" data-q="Make it shorter.">
+              Make it shorter
+            </button>
+            <button type="button" class="chip-btn" data-q="Make it more formal.">
+              More formal
+            </button>
+            <button type="button" class="chip-btn" data-q="Make it more friendly.">
+              Friendlier
+            </button>
+            <button
+              type="button"
+              class="chip-btn"
+              data-q="Does this sound natural to a native speaker?"
+            >
+              Is it natural?
+            </button>
+            <button type="button" class="chip-btn" data-q="Explain the grammar of the translation.">
+              Explain grammar
+            </button>
           </div>
           <form id="chatForm" class="chat-form">
-            <input id="chatInput" type="text" placeholder="Ask anything about this translation…" autocomplete="off" />
+            <input
+              id="chatInput"
+              type="text"
+              placeholder="Ask anything about this translation…"
+              autocomplete="off"
+            />
             <button type="submit" id="chatSend" class="chat-send" aria-label="Send">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"></path><path d="M22 2l-7 20-4-9-9-4 20-7z"></path></svg>
+              <svg
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 2L11 13"></path>
+                <path d="M22 2l-7 20-4-9-9-4 20-7z"></path>
+              </svg>
             </button>
           </form>
         </section>
@@ -249,7 +497,19 @@
         <section id="historyCard" class="card" hidden>
           <div class="card-head">
             <span class="card-title">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+              <svg
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M12 7v5l3 2"></path>
+              </svg>
               Recent Translations
             </span>
             <button id="clearHistory" class="mini-btn ghost" title="Clear history">
@@ -266,49 +526,200 @@
         <p class="section-sub">Not just a translator — a complete AI language studio.</p>
         <div class="feature-grid">
           <article class="feature-card">
-            <span class="feature-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></span>
+            <span class="feature-ic"
+              ><svg
+                viewBox="0 0 24 24"
+                width="22"
+                height="22"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M2 12h20"></path>
+                <path
+                  d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                ></path></svg
+            ></span>
             <h3>240+ Languages</h3>
-            <p>Translate across 240+ languages with auto-detect, searchable pickers, and country flags.</p>
+            <p>
+              Translate across 240+ languages with auto-detect, searchable pickers, and country
+              flags.
+            </p>
           </article>
           <article class="feature-card">
-            <span class="feature-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10a3 3 0 0 1 3-3h1l1-2h8l1 2h1a3 3 0 0 1 3 3v7a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3z"></path><circle cx="12" cy="13" r="3"></circle></svg></span>
+            <span class="feature-ic"
+              ><svg
+                viewBox="0 0 24 24"
+                width="22"
+                height="22"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M2 10a3 3 0 0 1 3-3h1l1-2h8l1 2h1a3 3 0 0 1 3 3v7a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3z"
+                ></path>
+                <circle cx="12" cy="13" r="3"></circle></svg
+            ></span>
             <h3>6 Translation Modes</h3>
-            <p>The same text, any tone — Standard, Professional, Friendly, Academic, Social, or Funny.</p>
+            <p>
+              The same text, any tone — Standard, Professional, Friendly, Academic, Social, or
+              Funny.
+            </p>
           </article>
           <article class="feature-card">
-            <span class="feature-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3z"></path></svg></span>
+            <span class="feature-ic"
+              ><svg
+                viewBox="0 0 24 24"
+                width="22"
+                height="22"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3z"
+                ></path></svg
+            ></span>
             <h3>12 AI Tools</h3>
-            <p>Improve, Summarize, turn into an Email or Social post, get 3 alternatives, vocabulary, idioms & more.</p>
+            <p>
+              Improve, Summarize, turn into an Email or Social post, get 3 alternatives, vocabulary,
+              idioms & more.
+            </p>
           </article>
           <article class="feature-card">
-            <span class="feature-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span>
+            <span class="feature-ic"
+              ><svg
+                viewBox="0 0 24 24"
+                width="22"
+                height="22"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg
+            ></span>
             <h3>AI Chat</h3>
-            <p>Ask follow-up questions about any translation — “make it shorter”, “is this natural?”, “explain grammar”.</p>
+            <p>
+              Ask follow-up questions about any translation — “make it shorter”, “is this natural?”,
+              “explain grammar”.
+            </p>
           </article>
           <article class="feature-card">
-            <span class="feature-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"></path><rect x="4" y="8" width="16" height="12" rx="2"></rect><path d="M2 14h2M20 14h2M15 13v2M9 13v2"></path></svg></span>
+            <span class="feature-ic"
+              ><svg
+                viewBox="0 0 24 24"
+                width="22"
+                height="22"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 8V4H8"></path>
+                <rect x="4" y="8" width="16" height="12" rx="2"></rect>
+                <path d="M2 14h2M20 14h2M15 13v2M9 13v2"></path></svg
+            ></span>
             <h3>Lingo Assistant</h3>
-            <p>A floating AI chatbot on every page — translate, ask language questions, or get help using the app anytime.</p>
+            <p>
+              A floating AI chatbot on every page — translate, ask language questions, or get help
+              using the app anytime.
+            </p>
           </article>
           <article class="feature-card">
-            <span class="feature-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M19 5a9 9 0 0 1 0 14"></path></svg></span>
+            <span class="feature-ic"
+              ><svg
+                viewBox="0 0 24 24"
+                width="22"
+                height="22"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M11 5L6 9H2v6h4l5 4V5z"></path>
+                <path d="M15.5 8.5a5 5 0 0 1 0 7"></path>
+                <path d="M19 5a9 9 0 0 1 0 14"></path></svg
+            ></span>
             <h3>Listen & Verify</h3>
-            <p>Hear translations in a natural voice (text-to-speech) and check accuracy with a reverse round-trip.</p>
+            <p>
+              Hear translations in a natural voice (text-to-speech) and check accuracy with a
+              reverse round-trip.
+            </p>
           </article>
           <article class="feature-card">
-            <span class="feature-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span>
+            <span class="feature-ic"
+              ><svg
+                viewBox="0 0 24 24"
+                width="22"
+                height="22"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="7" width="20" height="14" rx="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg
+            ></span>
             <h3>Domain Contexts</h3>
-            <p>Tune terminology for Business, Technical, Legal, Medical, Travel, or Education — accurate to the field.</p>
+            <p>
+              Tune terminology for Business, Technical, Legal, Medical, Travel, or Education —
+              accurate to the field.
+            </p>
           </article>
           <article class="feature-card">
-            <span class="feature-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span>
+            <span class="feature-ic"
+              ><svg
+                viewBox="0 0 24 24"
+                width="22"
+                height="22"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M12 7v5l3 2"></path></svg
+            ></span>
             <h3>History &amp; Drafts</h3>
-            <p>Recent translations are saved locally and one click restores them; your draft survives a page refresh.</p>
+            <p>
+              Recent translations are saved locally and one click restores them; your draft survives
+              a page refresh.
+            </p>
           </article>
           <article class="feature-card">
-            <span class="feature-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg></span>
+            <span class="feature-ic"
+              ><svg
+                viewBox="0 0 24 24"
+                width="22"
+                height="22"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <path d="m9 12 2 2 4-4"></path></svg
+            ></span>
             <h3>Secure & On the Edge</h3>
-            <p>100% Cloudflare Workers — your API key stays server-side and pages load from 300+ edge locations.</p>
+            <p>
+              100% Cloudflare Workers — your API key stays server-side and pages load from 300+ edge
+              locations.
+            </p>
           </article>
         </div>
       </section>
@@ -322,14 +733,13 @@
           <div class="about-card">
             <h3>What it is</h3>
             <p>
-              Most translators stop at converting words. AI Translator keeps going —
-              it understands, adapts, and teaches. Across 240+ languages you can
-              shift the tone, lock in the right domain vocabulary, rewrite for a new
-              purpose, hear it spoken aloud, verify accuracy with a reverse
-              round-trip, and chat with an assistant that answers your questions in
-              plain language. It’s less a translate button, more a language partner —
-              and the entire product, interface and API alike, runs inside a single
-              Cloudflare Worker at the network edge.
+              Most translators stop at converting words. AI Translator keeps going — it understands,
+              adapts, and teaches. Across 240+ languages you can shift the tone, lock in the right
+              domain vocabulary, rewrite for a new purpose, hear it spoken aloud, verify accuracy
+              with a reverse round-trip, and chat with an assistant that answers your questions in
+              plain language. It’s less a translate button, more a language partner — and the entire
+              product, interface and API alike, runs inside a single Cloudflare Worker at the
+              network edge.
             </p>
           </div>
 
@@ -343,21 +753,40 @@
             </ol>
           </div>
         </div>
-
       </section>
 
       <!-- ---------- Footer ---------- -->
       <footer class="site-foot">
         <span class="foot-left">
-          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          <svg
+            viewBox="0 0 24 24"
+            width="15"
+            height="15"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
           Secure · Fast · Accurate
         </span>
         <span class="foot-mid">
           Powered by <b class="c-openai">OpenAI</b> · <b class="c-cf">Cloudflare Workers</b>
         </span>
         <span class="foot-right">
-          <a class="foot-gh" href="https://github.com/MRaysa/Translator" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.73 1.27 3.4.97.1-.75.4-1.27.73-1.56-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.4-5.28 5.69.41.36.78 1.08.78 2.18v3.23c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"></path></svg>
+          <a
+            class="foot-gh"
+            href="https://github.com/MRaysa/Translator"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+              <path
+                d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.73 1.27 3.4.97.1-.75.4-1.27.73-1.56-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.4-5.28 5.69.41.36.78 1.08.78 2.18v3.23c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"
+              ></path>
+            </svg>
             <span>View on GitHub</span>
           </a>
         </span>
@@ -388,8 +817,34 @@
       <button id="botToggle" class="bot-toggle" aria-label="Open AI assistant" title="Ask Lingo">
         <span class="bot-pulse" aria-hidden="true"></span>
         <span class="bot-ping" aria-hidden="true"></span>
-        <svg class="bot-ic bot-ic-open" viewBox="0 0 24 24" width="27" height="27" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"></path><rect x="4" y="8" width="16" height="12" rx="2"></rect><path d="M2 14h2M20 14h2M15 13v2M9 13v2"></path></svg>
-        <svg class="bot-ic bot-ic-close" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+        <svg
+          class="bot-ic bot-ic-open"
+          viewBox="0 0 24 24"
+          width="27"
+          height="27"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M12 8V4H8"></path>
+          <rect x="4" y="8" width="16" height="12" rx="2"></rect>
+          <path d="M2 14h2M20 14h2M15 13v2M9 13v2"></path>
+        </svg>
+        <svg
+          class="bot-ic bot-ic-close"
+          viewBox="0 0 24 24"
+          width="24"
+          height="24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M18 6L6 18M6 6l12 12"></path>
+        </svg>
       </button>
     </div>
 
@@ -397,7 +852,20 @@
       <div class="bot-head">
         <div class="bot-id">
           <span class="bot-avatar">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"></path><rect x="4" y="8" width="16" height="12" rx="2"></rect><path d="M2 14h2M20 14h2M15 13v2M9 13v2"></path></svg>
+            <svg
+              viewBox="0 0 24 24"
+              width="18"
+              height="18"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M12 8V4H8"></path>
+              <rect x="4" y="8" width="16" height="12" rx="2"></rect>
+              <path d="M2 14h2M20 14h2M15 13v2M9 13v2"></path>
+            </svg>
           </span>
           <div>
             <strong>Lingo</strong>
@@ -405,19 +873,52 @@
           </div>
         </div>
         <button id="botClose" class="bot-close" aria-label="Close">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+          <svg
+            viewBox="0 0 24 24"
+            width="18"
+            height="18"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M18 6L6 18M6 6l12 12"></path>
+          </svg>
         </button>
       </div>
       <div id="botMessages" class="bot-messages"></div>
       <div id="botQuick" class="bot-quick">
-        <button type="button" class="chip-btn" data-q="Translate 'Good morning, have a great day!' to Spanish.">Translate a phrase</button>
-        <button type="button" class="chip-btn" data-q="How do I say 'thank you' in Japanese?">Say “thank you” in Japanese</button>
-        <button type="button" class="chip-btn" data-q="What can this app do?">What can this app do?</button>
+        <button
+          type="button"
+          class="chip-btn"
+          data-q="Translate 'Good morning, have a great day!' to Spanish."
+        >
+          Translate a phrase
+        </button>
+        <button type="button" class="chip-btn" data-q="How do I say 'thank you' in Japanese?">
+          Say “thank you” in Japanese
+        </button>
+        <button type="button" class="chip-btn" data-q="What can this app do?">
+          What can this app do?
+        </button>
       </div>
       <form id="botForm" class="bot-form">
         <input id="botInput" type="text" placeholder="Ask Lingo anything…" autocomplete="off" />
         <button type="submit" id="botSend" class="chat-send" aria-label="Send">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"></path><path d="M22 2l-7 20-4-9-9-4 20-7z"></path></svg>
+          <svg
+            viewBox="0 0 24 24"
+            width="18"
+            height="18"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M22 2L11 13"></path>
+            <path d="M22 2l-7 20-4-9-9-4 20-7z"></path>
+          </svg>
         </button>
       </form>
     </div>

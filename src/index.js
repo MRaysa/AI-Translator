@@ -38,9 +38,7 @@ api.route("/chat", chat);
 api.route("/assistant", assistant);
 
 // JSON 404 + error responses for the API surface.
-api.notFound((c) =>
-  c.json({ error: { code: "NOT_FOUND", message: "No such API route." } }, 404)
-);
+api.notFound((c) => c.json({ error: { code: "NOT_FOUND", message: "No such API route." } }, 404));
 api.onError(errorHandler);
 
 const app = new Hono();

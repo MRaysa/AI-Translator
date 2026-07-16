@@ -3,24 +3,48 @@
  * API requests are always network (never cached). */
 const CACHE = "ai-translator-v2";
 const CORE = [
-  "/", "/index.html", "/styles.css", "/app.js", "/manifest.webmanifest",
-  "/favicon.svg", "/icon-192.png", "/icon-512.png", "/icon-maskable-512.png",
-  "/js/dom.js", "/js/state.js", "/js/ui.js", "/js/theme.js", "/js/scrollspy.js",
-  "/js/input.js", "/js/api.js", "/js/markdown.js", "/js/flags.js", "/js/icons.js",
-  "/js/searchableSelect.js", "/js/translate.js",
-  "/js/languages.js", "/js/tools.js", "/js/chat.js", "/js/assistant.js",
-  "/js/history.js", "/js/pwa.js",
+  "/",
+  "/index.html",
+  "/styles.css",
+  "/app.js",
+  "/manifest.webmanifest",
+  "/favicon.svg",
+  "/icon-192.png",
+  "/icon-512.png",
+  "/icon-maskable-512.png",
+  "/js/dom.js",
+  "/js/state.js",
+  "/js/ui.js",
+  "/js/theme.js",
+  "/js/scrollspy.js",
+  "/js/input.js",
+  "/js/api.js",
+  "/js/markdown.js",
+  "/js/flags.js",
+  "/js/icons.js",
+  "/js/searchableSelect.js",
+  "/js/translate.js",
+  "/js/languages.js",
+  "/js/tools.js",
+  "/js/chat.js",
+  "/js/assistant.js",
+  "/js/history.js",
+  "/js/pwa.js",
 ];
 
 self.addEventListener("install", (e) => {
   e.waitUntil(
-    caches.open(CACHE).then((c) => c.addAll(CORE)).then(() => self.skipWaiting())
+    caches
+      .open(CACHE)
+      .then((c) => c.addAll(CORE))
+      .then(() => self.skipWaiting())
   );
 });
 
 self.addEventListener("activate", (e) => {
   e.waitUntil(
-    caches.keys()
+    caches
+      .keys()
       .then((keys) => Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k))))
       .then(() => self.clients.claim())
   );

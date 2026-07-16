@@ -20,9 +20,7 @@ export function buildTranslationMessages({
 }) {
   const target = languageName(targetLang);
   const source =
-    sourceLang && sourceLang !== "auto"
-      ? languageName(sourceLang)
-      : "the detected source language";
+    sourceLang && sourceLang !== "auto" ? languageName(sourceLang) : "the detected source language";
 
   const lines = [
     "You are a professional translation engine.",

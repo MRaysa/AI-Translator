@@ -37,6 +37,12 @@ export async function loadContexts() {
 /** Loads languages and builds the source/target searchable dropdowns. */
 export async function loadLanguages() {
   const langs = await api.languages();
-  state.sourcePicker = createSearchableSelect($("sourceLang"), { options: langs.source, value: "auto" });
-  state.targetPicker = createSearchableSelect($("targetLang"), { options: langs.target, value: "bangla" });
+  state.sourcePicker = createSearchableSelect($("sourceLang"), {
+    options: langs.source,
+    value: "auto",
+  });
+  state.targetPicker = createSearchableSelect($("targetLang"), {
+    options: langs.target,
+    value: "bangla",
+  });
 }

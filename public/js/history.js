@@ -22,7 +22,9 @@ function writeHistory(list) {
 
 /** Adds a translation to history (deduped) and re-renders the list. */
 export function addHistory(item) {
-  const list = readHistory().filter((h) => !(h.text === item.text && h.targetLang === item.targetLang));
+  const list = readHistory().filter(
+    (h) => !(h.text === item.text && h.targetLang === item.targetLang)
+  );
   list.unshift({ ...item, at: Date.now() });
   writeHistory(list.slice(0, HISTORY_MAX));
   renderHistory();
@@ -36,7 +38,10 @@ function timeAgo(ts) {
   return `${Math.floor(s / 86400)}d ago`;
 }
 function esc(s) {
-  return s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  return s.replace(
+    /[&<>"]/g,
+    (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]
+  );
 }
 
 export function renderHistory() {
@@ -66,7 +71,12 @@ function restoreHistory(i) {
   state.sourcePicker.setValue(h.sourceLang);
   state.targetPicker.setValue(h.targetLang);
   setOutput(h.translation);
-  state.lastResult = { text: h.text, translation: h.translation, sourceLang: h.sourceLang, targetLang: h.targetLang };
+  state.lastResult = {
+    text: h.text,
+    translation: h.translation,
+    sourceLang: h.sourceLang,
+    targetLang: h.targetLang,
+  };
   els.copy.hidden = els.listen.hidden = els.toolbar.hidden = false;
   els.toolPanel.hidden = true;
   resetChat();

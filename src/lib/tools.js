@@ -10,7 +10,8 @@ export const TOOLS = {
     label: "Improve",
     emoji: "✨",
     group: "rewrite",
-    instruction: "Rewrite it to sound more natural, fluent, and polished, keeping the same meaning.",
+    instruction:
+      "Rewrite it to sound more natural, fluent, and polished, keeping the same meaning.",
   },
   summarize: {
     label: "Summarize",
@@ -22,13 +23,15 @@ export const TOOLS = {
     label: "Email",
     emoji: "📧",
     group: "rewrite",
-    instruction: "Rewrite it as a clear, polite, well-structured email with a greeting and a sign-off.",
+    instruction:
+      "Rewrite it as a clear, polite, well-structured email with a greeting and a sign-off.",
   },
   social: {
     label: "Social Post",
     emoji: "📱",
     group: "rewrite",
-    instruction: "Rewrite it as an engaging social-media post with a natural tone, relevant emojis, and 2–3 hashtags.",
+    instruction:
+      "Rewrite it as an engaging social-media post with a natural tone, relevant emojis, and 2–3 hashtags.",
   },
   simplify: {
     label: "Simplify",

@@ -14,11 +14,7 @@ import { ApiError } from "../middleware/errorHandler.js";
 export class OpenAIService {
   constructor(config) {
     if (!config.openaiApiKey) {
-      throw new ApiError(
-        500,
-        "CONFIG_ERROR",
-        "OPENAI_API_KEY is not configured on the server."
-      );
+      throw new ApiError(500, "CONFIG_ERROR", "OPENAI_API_KEY is not configured on the server.");
     }
     this.apiKey = config.openaiApiKey;
     this.baseUrl = config.openaiBaseUrl;
@@ -42,15 +38,14 @@ export class OpenAIService {
       const body = await res.json().catch(() => ({}));
 
       if (!res.ok) {
-        const message =
-          body?.error?.message || `OpenAI request failed (${res.status})`;
+        const message = body?.error?.message || `OpenAI request failed (${res.status})`;
         // Map upstream auth/quota errors to sensible client-facing codes.
         const code =
           res.status === 401
             ? "OPENAI_AUTH_ERROR"
             : res.status === 429
-            ? "OPENAI_RATE_LIMIT"
-            : "OPENAI_ERROR";
+              ? "OPENAI_RATE_LIMIT"
+              : "OPENAI_ERROR";
         throw new ApiError(res.status === 401 ? 500 : 502, code, message);
       }
       return body;
@@ -93,11 +88,7 @@ export class OpenAIService {
 
     const translation = body?.choices?.[0]?.message?.content?.trim();
     if (!translation) {
-      throw new ApiError(
-        502,
-        "OPENAI_EMPTY_RESPONSE",
-        "OpenAI returned an empty translation."
-      );
+      throw new ApiError(502, "OPENAI_EMPTY_RESPONSE", "OpenAI returned an empty translation.");
     }
     return { translation, model: body.model || model };
   }
@@ -179,7 +170,8 @@ export class OpenAIService {
       return await res.arrayBuffer();
     } catch (e) {
       if (e instanceof ApiError) throw e;
-      if (e.name === "AbortError") throw new ApiError(504, "OPENAI_TIMEOUT", "TTS request timed out.");
+      if (e.name === "AbortError")
+        throw new ApiError(504, "OPENAI_TIMEOUT", "TTS request timed out.");
       throw new ApiError(502, "OPENAI_TTS_ERROR", e.message);
     } finally {
       clearTimeout(timeout);

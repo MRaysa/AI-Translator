@@ -7,36 +7,40 @@ The frontend UI and the backend API both run inside a **single Cloudflare Worker
 ## ✨ Features
 
 **Translation**
+
 - 240+ languages with auto-detect, searchable pickers, and country flags
 - 6 tone **modes**: Standard, Professional, Friendly, Academic, Social, Funny
 - 7 domain **contexts**: General, Business, Technical, Legal, Medical, Travel, Education
 - Preserve-formatting toggle (markdown, lists, line breaks)
 
 **AI tools** (12) — one-click on any translation
-- *Rewrite:* Improve, Summarize, Email, Social Post, Simplify, Kid-friendly, Fix Grammar
-- *Analyze:* Explain, 3 Alternatives, Vocabulary, Cultural Note, Idioms & Slang, Detect Emotion, Reverse check (with similarity %)
+
+- _Rewrite:_ Improve, Summarize, Email, Social Post, Simplify, Kid-friendly, Fix Grammar
+- _Analyze:_ Explain, 3 Alternatives, Vocabulary, Cultural Note, Idioms & Slang, Detect Emotion, Reverse check (with similarity %)
 
 **Assistants**
+
 - **AI Chat** about a translation (follow-up questions, rewrites)
 - **Lingo** — a floating AI chatbot assistant on every page
 - **Listen** — text-to-speech in a natural voice (OpenAI TTS)
 
 **Experience**
+
 - Translation history + auto-saved draft (localStorage)
 - Live word / character / reading-time stats
 - Light / dark theme, responsive landing page, professional iconography
 
 ## 🧱 Tech stack
 
-| Area | Tech |
-|------|------|
-| Runtime | Cloudflare Workers |
-| Framework | [Hono](https://hono.dev) |
-| Language | JavaScript (ESM) |
-| AI | OpenAI API (chat + TTS) |
-| Validation | Zod |
-| Tests | Vitest |
-| Tooling | Wrangler |
+| Area       | Tech                     |
+| ---------- | ------------------------ |
+| Runtime    | Cloudflare Workers       |
+| Framework  | [Hono](https://hono.dev) |
+| Language   | JavaScript (ESM)         |
+| AI         | OpenAI API (chat + TTS)  |
+| Validation | Zod                      |
+| Tests      | Vitest                   |
+| Tooling    | Wrangler                 |
 
 ## 📁 Project structure
 
@@ -127,20 +131,20 @@ npx wrangler deploy
 
 ## 🔌 API
 
-| Method | Path | Purpose |
-|--------|------|---------|
-| POST | `/api/translate` | Translate text (mode, context, preserveFormatting) |
-| POST | `/api/tools/run` | Run an AI tool (improve, summarize, alternatives, …) |
-| GET  | `/api/tools` | List available AI tools |
-| POST | `/api/explain` | Explain a translation for a learner |
-| POST | `/api/chat` | Ask follow-up questions about a translation |
-| POST | `/api/assistant` | Standalone assistant chatbot (Lingo) |
-| POST | `/api/speak` | Text-to-speech (MP3) |
-| GET  | `/api/languages` | Supported languages |
-| GET  | `/api/modes` | Translation modes |
-| GET  | `/api/contexts` | Domain contexts |
-| GET  | `/api/models` | Active OpenAI models |
-| GET  | `/api/health` | Liveness check |
+| Method | Path             | Purpose                                              |
+| ------ | ---------------- | ---------------------------------------------------- |
+| POST   | `/api/translate` | Translate text (mode, context, preserveFormatting)   |
+| POST   | `/api/tools/run` | Run an AI tool (improve, summarize, alternatives, …) |
+| GET    | `/api/tools`     | List available AI tools                              |
+| POST   | `/api/explain`   | Explain a translation for a learner                  |
+| POST   | `/api/chat`      | Ask follow-up questions about a translation          |
+| POST   | `/api/assistant` | Standalone assistant chatbot (Lingo)                 |
+| POST   | `/api/speak`     | Text-to-speech (MP3)                                 |
+| GET    | `/api/languages` | Supported languages                                  |
+| GET    | `/api/modes`     | Translation modes                                    |
+| GET    | `/api/contexts`  | Domain contexts                                      |
+| GET    | `/api/models`    | Active OpenAI models                                 |
+| GET    | `/api/health`    | Liveness check                                       |
 
 ### Example
 

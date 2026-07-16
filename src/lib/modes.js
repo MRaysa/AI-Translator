@@ -23,20 +23,17 @@ export const MODES = {
   academic: {
     label: "Academic",
     emoji: "🎓",
-    instruction:
-      "Use a precise, scholarly, formal academic register with careful word choice.",
+    instruction: "Use a precise, scholarly, formal academic register with careful word choice.",
   },
   social: {
     label: "Social",
     emoji: "📱",
-    instruction:
-      "Use a concise, catchy social-media style with natural, everyday expressions.",
+    instruction: "Use a concise, catchy social-media style with natural, everyday expressions.",
   },
   funny: {
     label: "Funny",
     emoji: "🎭",
-    instruction:
-      "Add light humor and playfulness while preserving the original meaning.",
+    instruction: "Add light humor and playfulness while preserving the original meaning.",
   },
 };
 

@@ -12,10 +12,7 @@ const hits = new Map(); // ip -> { count, resetAt }
 export async function rateLimit(c, next) {
   const { rateLimit: limit, rateWindowSec } = getConfig(c.env);
   const windowMs = rateWindowSec * 1000;
-  const ip =
-    c.req.header("CF-Connecting-IP") ||
-    c.req.header("x-forwarded-for") ||
-    "unknown";
+  const ip = c.req.header("CF-Connecting-IP") || c.req.header("x-forwarded-for") || "unknown";
   const now = Date.now();
 
   // Opportunistic cleanup so the map can't grow unbounded.
