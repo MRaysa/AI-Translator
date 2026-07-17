@@ -5,10 +5,10 @@
   "type": "module",
   "main": "src/index.js",
   "scripts": {
-    "build:html": "node scripts/build-html.mjs",
-    "predev": "node scripts/build-html.mjs",
+    "build:html": "node scripts/build-html.mjs && prettier --write public/index.html",
+    "predev": "npm run build:html",
     "dev": "wrangler dev",
-    "predeploy": "node scripts/build-html.mjs",
+    "predeploy": "npm run build:html",
     "deploy": "wrangler deploy",
     "test": "vitest run",
     "test:watch": "vitest",
