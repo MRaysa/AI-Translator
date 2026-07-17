@@ -1,0 +1,23 @@
+/* Small-screen adjustments. */
+
+@media (max-width: 760px) {
+  .controls {
+    grid-template-columns: 1fr 1fr;
+  }
+  .controls .swap {
+    order: 3;
+  }
+  .controls .cta {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+  .adv-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .install-card {
+    display: none;
+  }
+}

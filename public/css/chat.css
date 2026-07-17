@@ -1,0 +1,88 @@
+/* In-page "Ask AI" chat and the floating assistant share these message styles. */
+
+.chat-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 320px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.chat-messages:empty {
+  display: none;
+}
+
+.msg {
+  max-width: 85%;
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.msg.user {
+  align-self: flex-end;
+  background: var(--accent);
+  color: #fff;
+}
+
+.msg.ai {
+  align-self: flex-start;
+  background: var(--bg);
+  border: 1px solid var(--border);
+}
+
+.msg.typing {
+  color: var(--muted);
+}
+
+.chat-quick,
+.bot-quick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.chat-form,
+.bot-form {
+  display: flex;
+  gap: 8px;
+}
+
+.chat-form input,
+.bot-form input {
+  flex: 1;
+  padding: 9px 12px;
+  font: inherit;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--field);
+  color: var(--text);
+}
+
+.chat-form input:focus,
+.bot-form input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.chat-send {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+.chat-send:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.chat-send:disabled {
+  opacity: 0.7;
+}

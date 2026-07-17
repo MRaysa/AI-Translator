@@ -1,0 +1,83 @@
+/* Collapsible "Advanced Options" and "AI Tools" panels. */
+
+.advanced {
+  margin-top: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  /* No overflow:hidden here — it would clip the picker dropdowns that open
+     inside the body. Corners are rounded on the summary bar instead. */
+}
+
+.advanced > summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--bg);
+  border-radius: var(--radius);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.advanced[open] > summary {
+  border-radius: var(--radius) var(--radius) 0 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.advanced > summary::-webkit-details-marker {
+  display: none;
+}
+
+.advanced > summary:hover {
+  color: var(--accent);
+}
+
+.adv-ic {
+  display: inline-flex;
+  color: var(--muted);
+}
+
+.adv-caret {
+  margin-left: auto;
+  display: inline-flex;
+  color: var(--muted);
+  transition: transform 0.15s ease;
+}
+
+.advanced[open] > summary .adv-caret {
+  transform: rotate(180deg);
+}
+
+.advanced-body {
+  padding: 14px;
+}
+
+/* Labelled grid inside Advanced Options. */
+.adv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 16px;
+  align-items: start;
+}
+
+.adv-field {
+  min-width: 0;
+}
+
+.adv-flabel {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+/* Style + context pickers fill their grid cell. */
+.mode-select,
+.ctx-select {
+  width: 100%;
+}

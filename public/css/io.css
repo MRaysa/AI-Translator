@@ -1,0 +1,57 @@
+/* Input textarea, output area, counters and stats. */
+
+textarea,
+.output {
+  width: 100%;
+  min-height: 140px;
+  padding: 12px;
+  font: inherit;
+  color: var(--text);
+  background: var(--field);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  resize: vertical;
+}
+
+textarea:focus,
+.output:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.output {
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.output[data-empty="true"] {
+  color: var(--muted);
+}
+
+.head-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.counter {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.stats {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.stats b {
+  color: var(--text);
+}
+
+.stats .sep {
+  opacity: 0.5;
+}

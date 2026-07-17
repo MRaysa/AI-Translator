@@ -111,6 +111,10 @@ export async function initTools() {
   els.toolbar.addEventListener("click", (e) => {
     const btn = e.target.closest(".chip-btn");
     if (!btn || btn.disabled) return;
+    if (!state.lastResult) {
+      toast("Translate something first to use the AI tools");
+      return;
+    }
     const special = btn.dataset.special;
     if (special === "explain") explainTranslation();
     else if (special === "reverse") reverseCheck();

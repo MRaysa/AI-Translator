@@ -1,0 +1,57 @@
+<section id="chatCard" class="card" hidden>
+  <div class="card-head">
+    <span class="card-title">
+      <svg
+        viewBox="0 0 24 24"
+        width="18"
+        height="18"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+      </svg>
+      Ask AI about this translation
+    </span>
+  </div>
+  <div id="chatMessages" class="chat-messages"></div>
+  <div id="chatQuick" class="chat-quick">
+    <button type="button" class="chip-btn" data-q="Why did you choose this wording?">
+      Why this word?
+    </button>
+    <button type="button" class="chip-btn" data-q="Make it shorter.">Make it shorter</button>
+    <button type="button" class="chip-btn" data-q="Make it more formal.">More formal</button>
+    <button type="button" class="chip-btn" data-q="Make it more friendly.">Friendlier</button>
+    <button type="button" class="chip-btn" data-q="Does this sound natural to a native speaker?">
+      Is it natural?
+    </button>
+    <button type="button" class="chip-btn" data-q="Explain the grammar of the translation.">
+      Explain grammar
+    </button>
+  </div>
+  <form id="chatForm" class="chat-form">
+    <input
+      id="chatInput"
+      type="text"
+      placeholder="Ask anything about this translation…"
+      autocomplete="off"
+    />
+    <button type="submit" id="chatSend" class="chat-send" aria-label="Send">
+      <svg
+        viewBox="0 0 24 24"
+        width="18"
+        height="18"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M22 2L11 13"></path>
+        <path d="M22 2l-7 20-4-9-9-4 20-7z"></path>
+      </svg>
+    </button>
+  </form>
+</section>

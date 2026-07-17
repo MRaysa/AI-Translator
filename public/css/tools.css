@@ -1,0 +1,156 @@
+/* AI tools toolbar, chips and the result/insight panel. */
+
+.toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tool-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.tool-group-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 74px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.tool-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip,
+.chip-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 11px;
+  font: inherit;
+  font-size: 13px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.chip-btn svg {
+  color: var(--muted);
+}
+
+.chip-btn:hover {
+  border-color: var(--accent);
+}
+
+.chip-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.chip {
+  cursor: default;
+}
+
+.chip .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+}
+
+/* Result / insight panel. */
+.insight {
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+}
+
+.insight[hidden] {
+  display: none;
+}
+
+.insight-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.insight p,
+.insight .rich {
+  margin: 0;
+  color: var(--text);
+  word-break: break-word;
+}
+
+.rich p,
+.msg p {
+  margin: 0 0 8px;
+}
+
+.rich p:last-child,
+.msg p:last-child {
+  margin-bottom: 0;
+}
+
+.rich ul,
+.rich ol,
+.msg ul,
+.msg ol {
+  margin: 6px 0;
+  padding-left: 20px;
+}
+
+.rich code,
+.msg code {
+  font-family: monospace;
+  font-size: 0.9em;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: var(--bg);
+}
+
+.tool-copy {
+  margin-left: auto;
+  padding: 3px 8px;
+  font: inherit;
+  font-size: 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.sim-badge {
+  margin-left: auto;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--green);
+}
+
+.sim-badge.mid {
+  background: #d97706;
+}
+
+.sim-badge.low {
+  background: var(--danger);
+}

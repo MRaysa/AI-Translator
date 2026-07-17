@@ -15,7 +15,7 @@ export async function translate() {
 
   setLoading(true);
   setOutput("");
-  els.copy.hidden = els.listen.hidden = els.toolbar.hidden = true;
+  els.copy.hidden = els.listen.hidden = true;
   els.detected.hidden = els.toolPanel.hidden = true;
   resetChat();
   setStatus("");
@@ -34,7 +34,7 @@ export async function translate() {
     });
     setOutput(data.translation);
     state.lastResult = { text, translation: data.translation, sourceLang, targetLang };
-    els.copy.hidden = els.listen.hidden = els.toolbar.hidden = false;
+    els.copy.hidden = els.listen.hidden = false;
     els.chatCard.hidden = false;
     showChip(state.targetPicker.getName());
     setStatus(`Translated with ${data.model}`);
@@ -53,7 +53,7 @@ function swap() {
   state.targetPicker.setValue(from);
   els.input.value = els.output.dataset.empty === "true" ? "" : els.output.textContent;
   setOutput("");
-  els.copy.hidden = els.listen.hidden = els.toolbar.hidden = true;
+  els.copy.hidden = els.listen.hidden = true;
   els.detected.hidden = els.toolPanel.hidden = true;
   resetChat();
   state.lastResult = null;

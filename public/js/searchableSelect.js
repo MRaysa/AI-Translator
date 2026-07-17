@@ -9,7 +9,7 @@ import { flagHtml } from "./flags.js";
  */
 export function createSearchableSelect(
   mount,
-  { options, value, renderIcon = flagHtml, searchable = true }
+  { options, value, renderIcon = flagHtml, searchable = true, onChange }
 ) {
   let current = value;
   let activeIndex = -1;
@@ -94,9 +94,10 @@ export function createSearchableSelect(
   }
 
   function select(code) {
-    if (code) {
+    if (code && code !== current) {
       current = code;
       renderLabel();
+      onChange?.(code);
     }
     close();
     trigger.focus();

@@ -1,0 +1,134 @@
+/* Searchable / click dropdown shared by language, context and style pickers. */
+
+.ss {
+  position: relative;
+}
+
+.ss-trigger {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 0 10px;
+  font: inherit;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--field);
+  color: var(--text);
+  cursor: pointer;
+  text-align: left;
+}
+
+.ss-trigger:hover {
+  border-color: var(--accent);
+}
+
+.ss-value {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.ss-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ss-caret {
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.ss-panel {
+  position: absolute;
+  z-index: 30;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  padding: 6px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.ss-panel[hidden] {
+  display: none;
+}
+
+.ss-search {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 6px;
+  font: inherit;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--field);
+  color: var(--text);
+}
+
+.ss-search:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.ss-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.ss-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.ss-option:hover,
+.ss-option.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.ss-option.selected {
+  font-weight: 600;
+}
+
+.ss-empty {
+  padding: 8px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.lang-flag {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.lang-flag.is-auto {
+  display: inline-grid;
+  place-items: center;
+  color: var(--muted);
+}
+
+.cs-ic {
+  display: inline-flex;
+  color: var(--muted);
+}
+
+.ss-option:hover .cs-ic,
+.ss-option.active .cs-ic {
+  color: #fff;
+}

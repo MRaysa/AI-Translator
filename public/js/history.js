@@ -77,7 +77,7 @@ function restoreHistory(i) {
     sourceLang: h.sourceLang,
     targetLang: h.targetLang,
   };
-  els.copy.hidden = els.listen.hidden = els.toolbar.hidden = false;
+  els.copy.hidden = els.listen.hidden = false;
   els.toolPanel.hidden = true;
   resetChat();
   els.chatCard.hidden = false;

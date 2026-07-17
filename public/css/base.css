@@ -1,0 +1,61 @@
+/* Design tokens, reset and page shell. */
+
+:root {
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --field: #ffffff;
+  --border: #dfe1e6;
+  --text: #1f2430;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --danger: #dc2626;
+  --green: #16a34a;
+  --radius: 8px;
+}
+
+:root[data-theme="dark"] {
+  --bg: #12141a;
+  --surface: #1b1e26;
+  --field: #12141a;
+  --border: #2c313c;
+  --text: #e7e9ee;
+  --muted: #9aa0ac;
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+  --danger: #f87171;
+  --green: #22c55e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+a {
+  color: var(--accent);
+}

@@ -59,7 +59,4 @@ export function initAssistant() {
     if (btn) sendBot(btn.dataset.q);
   });
   els.botHintClose.addEventListener("click", hideHint);
-  setTimeout(() => {
-    if (els.botPanel.hidden) els.botHint.hidden = false;
-  }, 3500);
 }

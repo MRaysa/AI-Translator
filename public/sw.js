@@ -1,11 +1,27 @@
 /* Service worker — network-first for same-origin GET requests (so online
  * users always get the latest code), falling back to cache when offline.
  * API requests are always network (never cached). */
-const CACHE = "ai-translator-v3";
+const CACHE = "ai-translator-v4";
 const CORE = [
   "/",
   "/index.html",
   "/styles.css",
+  "/css/base.css",
+  "/css/nav.css",
+  "/css/hero.css",
+  "/css/cards.css",
+  "/css/io.css",
+  "/css/buttons.css",
+  "/css/controls.css",
+  "/css/select.css",
+  "/css/collapsible.css",
+  "/css/tools.css",
+  "/css/chat.css",
+  "/css/assistant.css",
+  "/css/install.css",
+  "/css/history.css",
+  "/css/toast.css",
+  "/css/responsive.css",
   "/app.js",
   "/manifest.webmanifest",
   "/favicon.svg",

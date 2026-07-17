@@ -1,0 +1,45 @@
+/* Small action buttons (Copy, Listen, Clear, Speak…). */
+
+.mini-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  font: inherit;
+  font-size: 13px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.mini-btn:hover {
+  border-color: var(--accent);
+}
+
+.mini-btn.ghost {
+  border-color: transparent;
+  background: transparent;
+  color: var(--accent);
+}
+
+.mini-btn.ghost:hover {
+  background: var(--bg);
+}
+
+.mini-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.mini-btn.listening {
+  color: #fff;
+  background: var(--danger);
+  border-color: var(--danger);
+}
+
+.out-actions {
+  display: inline-flex;
+  gap: 6px;
+}

@@ -17,6 +17,7 @@ export const els = {
   preserve: $("preserve"),
   listen: $("listen"),
   toolbar: $("toolbar"),
+  toolsBox: $("toolsBox"),
   chipsRewrite: $("chipsRewrite"),
   chipsAnalyze: $("chipsAnalyze"),
   toolPanel: $("toolPanel"),

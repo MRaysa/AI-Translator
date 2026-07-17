@@ -5,21 +5,18 @@ import { MODE_ICONS, CONTEXT_ICONS } from "./icons.js";
 import { createSearchableSelect } from "./searchableSelect.js";
 import { translate } from "./translate.js";
 
-/** Loads the tone modes and wires the mode pills. */
+/** Loads the tone modes into a compact dropdown (same control as Context). */
 export async function loadModes() {
   const { modes } = await api.modes();
-  els.modeBar.innerHTML = modes
-    .map(
-      (m) =>
-        `<button type="button" class="mode-pill${m.key === state.selectedMode ? " active" : ""}" role="tab" data-mode="${m.key}">${MODE_ICONS[m.key] || ""}<span>${m.label}</span></button>`
-    )
-    .join("");
-  els.modeBar.addEventListener("click", (e) => {
-    const pill = e.target.closest(".mode-pill");
-    if (!pill) return;
-    state.selectedMode = pill.dataset.mode;
-    [...els.modeBar.children].forEach((c) => c.classList.toggle("active", c === pill));
-    if (state.lastResult && els.input.value.trim()) translate();
+  state.modePicker = createSearchableSelect(els.modeBar, {
+    options: modes.map((m) => ({ code: m.key, name: m.label })),
+    value: state.selectedMode,
+    searchable: false,
+    renderIcon: (code) => `<span class="cs-ic">${MODE_ICONS[code] || ""}</span>`,
+    onChange: (code) => {
+      state.selectedMode = code;
+      if (state.lastResult && els.input.value.trim()) translate();
+    },
   });
 }
 

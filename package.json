@@ -5,7 +5,10 @@
   "type": "module",
   "main": "src/index.js",
   "scripts": {
+    "build:html": "node scripts/build-html.mjs",
+    "predev": "node scripts/build-html.mjs",
     "dev": "wrangler dev",
+    "predeploy": "node scripts/build-html.mjs",
     "deploy": "wrangler deploy",
     "test": "vitest run",
     "test:watch": "vitest",
