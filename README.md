@@ -84,7 +84,7 @@ sequenceDiagram
 
 - Translation history + auto-saved draft (localStorage)
 - Live word / character / reading-time stats
-- Light / dark theme, responsive landing page, professional iconography
+- Light / dark theme, responsive layout, professional iconography
 
 ## 🧱 Tech stack
 
@@ -112,15 +112,15 @@ src/                      # Backend (Cloudflare Worker)
   lib/                    prompt builder · languages · modes · contexts · tools · logger
 
 public/                   # Frontend (served by the Worker, native ES modules)
-  index.html              Markup
-  styles.css              Styles (light/dark themes)
+  index.html              Generated markup (assembled from partials/ — don't edit directly)
+  styles.css              Stylesheet index — @imports the modular files in css/
+  css/                    Styles split by concern (base · nav · cards · controls · tools · …)
   app.js                  Bootstrap — wires features & kicks off data loads
   js/
     dom.js                Cached element references
     state.js              Shared app state (single source of truth)
     ui.js                 toast · status · output · message-bubble helpers
     theme.js              Light/dark toggle
-    scrollspy.js          Nav highlight on scroll
     input.js              Input stats + draft auto-save
     api.js                Typed client for the Worker API
     markdown.js           Minimal safe markdown renderer
@@ -133,17 +133,27 @@ public/                   # Frontend (served by the Worker, native ES modules)
     chat.js               "Ask AI about this translation"
     assistant.js          Floating "Lingo" chatbot
     history.js            localStorage translation history
+    voice.js              Speech-to-text voice input
+    pwa.js                Service-worker registration + install banner
 
+partials/                 HTML source fragments assembled into public/index.html
+scripts/
+  build-html.mjs          Assembles partials/ → public/index.html
+  list-models.js          Lists active OpenAI models for your key
 test/                     Vitest tests
-scripts/list-models.js    Lists active OpenAI models for your key
 ```
 
 ### Frontend architecture
 
-The frontend uses **native ES modules** — no bundler or build step. `app.js` is a thin
-bootstrap; each concern lives in its own single-responsibility module under `public/js/`.
-Shared state lives in `state.js`, DOM refs in `dom.js`, and every feature module exposes an
-`init()` that wires its own events. The import graph is acyclic.
+The frontend uses **native ES modules** — no JS/CSS bundler. `app.js` is a thin bootstrap;
+each concern lives in its own single-responsibility module under `public/js/`. Shared state
+lives in `state.js`, DOM refs in `dom.js`, and every feature module exposes an `init()` that
+wires its own events. The import graph is acyclic.
+
+Styling is split by concern under `public/css/` and pulled together by a small `styles.css`
+`@import` index. The page markup is likewise divided into section fragments under `partials/`;
+`npm run build:html` assembles them into `public/index.html` (it also runs automatically before
+`dev` and `deploy`). Edit the partials — never the generated `public/index.html`.
 
 ## 🚀 Getting started
 
