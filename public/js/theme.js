@@ -2,11 +2,10 @@ import { els } from "./dom.js";
 
 const KEY = "ai-translator-theme";
 
-/** Applies the saved/preferred theme and wires the toggle button. */
+/** Defaults to light mode; remembers the user's choice once they toggle. */
 export function initTheme() {
   const saved = localStorage.getItem(KEY);
-  const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
-  document.documentElement.setAttribute("data-theme", saved || (prefersLight ? "light" : "dark"));
+  document.documentElement.setAttribute("data-theme", saved || "light");
 
   els.theme.addEventListener("click", () => {
     const next = document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light";
