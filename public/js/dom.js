@@ -32,6 +32,7 @@ export const els = {
   statChars: $("statChars"),
   statRead: $("statRead"),
   historyCard: $("historyCard"),
+  historyCount: $("historyCount"),
   historyList: $("historyList"),
   clearHistory: $("clearHistory"),
   chatCard: $("chatCard"),

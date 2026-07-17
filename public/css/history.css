@@ -1,4 +1,20 @@
-/* Recent-translations list. */
+/* Recent-translations collapsible. */
+
+/* It sits directly in the card stack, which already provides spacing. */
+#historyCard {
+  margin-top: 0;
+}
+
+.hist-count {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.history-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
 
 .history-list {
   list-style: none;

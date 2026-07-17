@@ -47,6 +47,7 @@ function esc(s) {
 export function renderHistory() {
   const list = readHistory();
   els.historyCard.hidden = list.length === 0;
+  els.historyCount.textContent = list.length ? `(${list.length})` : "";
   els.historyList.innerHTML = list
     .map((h, i) => {
       const from = h.text.length > 40 ? h.text.slice(0, 40) + "…" : h.text;
